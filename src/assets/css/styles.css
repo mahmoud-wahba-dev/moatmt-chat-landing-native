@@ -1,0 +1,99 @@
+@import "tailwindcss";
+@plugin "daisyui";
+/* @import "tw-animate-css"; */ 
+
+/* Custom variables from original globals.css */
+@custom-variant dark (&:is(.dark *));
+
+html {
+  font-size: clamp(12px, 1vw + 0.5rem, 16px);
+}
+
+:root {
+  scroll-behavior: smooth;
+
+  /* Primary brand color */
+  --primary: #2927f6;
+  --primary-foreground: #fff;
+
+  --dark-black: #464646;
+
+  /* Secondary accent color */
+  --secondary: #2ee378;
+  --secondary-foreground: #0a381c;
+
+  /* Error/danger color */
+  --error: #ff4444;
+  --error-foreground: #fff;
+
+  /* Page background and main text */
+  --background: #fff;
+  --foreground: #0a381c;
+
+  /* DaisyUI expected variable names */
+  --color-primary: #2927f6;
+  --color-dark-black: #464646;
+
+  --color-primary-content: #fff;
+  --color-secondary: #2ee378;
+  --color-secondary-content: white;
+  --color-error: #ff4444;
+  --color-error-content: #fff;
+  --color-base-100: #fff;
+  --color-base-content: #0a381c;
+  
+  /* Font family variable - will be defined by Google Fonts import */
+  --font-ibm-plex-sans-arabic: "IBM Plex Sans Arabic", sans-serif;
+}
+
+.dark {
+  --primary: #2ee378;
+  --primary-foreground: #0a381c;
+  --secondary: #0a381c;
+  --secondary-foreground: #2ee378;
+
+  --error: #ff4444;
+  --error-foreground: #fff;
+
+  --background: #181818;
+  --foreground: #fff;
+
+  --color-primary: #0a381c;
+  --color-dark-black: #464646;
+  --color-primary-content: #2ee378;
+  --color-secondary: #2ee378;
+  --color-secondary-content: #0a381c;
+  --color-error: #ff4444;
+  --color-error-content: #fff;
+  --color-base-100: #181818;
+  --color-base-content: #fff;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-ibm-plex-sans-arabic);
+  }
+}
+
+/* Container Styles */
+@layer utilities {
+  .container {
+    @apply w-full mx-auto max-w-full;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .center_flex {
+    @apply flex justify-center items-center;
+  }
+}
+
+@theme inline {
+  --color-dark-black: #464646;
+  --color-body: #f8f8f8;
+  --color-dot: #55cdff;
+  --color-greey: #595959;
+
+  /* Custom font sizes */
+  --text-8px: 0.5rem;
+}
